@@ -45,6 +45,18 @@ public class QueryProcessor {
             return String.valueOf(max);
 
         }
+
+        if (query.toLowerCase().contains("multiplied")) {
+            String str = query.replaceAll("[^0-9]", " ");
+            str = str.replaceAll(" +", " ");
+            System.out.println(str);
+            String[] testArray = str.split(" ");
+            System.out.println(Arrays.toString(testArray));
+            int result= (Integer.parseInt(testArray[1]))*(Integer.parseInt(testArray[2])) ;
+            return String.valueOf(result);
+        }
+
+
         return "";
 
     }

@@ -41,4 +41,9 @@ public class QueryProcessorTest {
         assertThat(queryProcessor.process("What is the largest number: 39,29,44?"), containsString("44"));
 
     }
+
+    @Test
+    public void multiplication(){
+        assertThat(queryProcessor.process("What is 8 multiplied by 42?"), containsString("336"));
+    }
 }
