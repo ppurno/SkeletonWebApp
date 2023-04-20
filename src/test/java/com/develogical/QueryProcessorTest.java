@@ -30,5 +30,15 @@ public class QueryProcessorTest {
     public void whatIsYourName() {
         assertThat(queryProcessor.process("What is your name?"), containsString("late-snow-2938"));
     }
+    @Test
+    public void largestNumber(){
+        assertThat(queryProcessor.process("What is the largest number: 29,39,44?"), containsString("44"));
 
+    }
+
+    @Test
+    public void largestNumber2(){
+        assertThat(queryProcessor.process("What is the largest number: 39,29,44?"), containsString("44"));
+
+    }
 }

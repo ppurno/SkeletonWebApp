@@ -1,5 +1,7 @@
 package com.develogical;
 
+import java.util.Arrays;
+
 public class QueryProcessor {
 
     public String process(String query) {
@@ -18,8 +20,30 @@ public class QueryProcessor {
         if (query.toLowerCase().contains("name")) {
             return "late-snow-2938";
         }
+        if (query.toLowerCase().contains("largest")) {
+            int result;
+            String str = query.replaceAll("[^0-9]", " ");
+            str = str.replaceAll(" +", " ");
+            System.out.println(str);
+            String[] testArray = str.split(" ");
+            System.out.println(Arrays.toString(testArray));
 
+            int max = Integer.MIN_VALUE, maxIndex = 0;
+
+            for (int i = 0; i < testArray.length; i++) {
+                if(testArray[i]==""){
+                    continue;
+                }
+                if (Integer.parseInt(testArray[i]) > max) {
+                    max = Integer.parseInt(testArray[i]);
+                    maxIndex = i;
+                }
+
+            }
+            return String.valueOf(max);
+
+        }
         return "";
-    }
 
+    }
 }
