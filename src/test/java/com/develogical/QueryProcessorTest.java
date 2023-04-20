@@ -8,22 +8,27 @@ import org.junit.Test;
 
 public class QueryProcessorTest {
 
-  QueryProcessor queryProcessor = new QueryProcessor();
+    QueryProcessor queryProcessor = new QueryProcessor();
 
-  @Test
-  public void returnsEmptyStringIfCannotProcessQuery() throws Exception {
-    assertThat(queryProcessor.process("test"), is(""));
-  }
+    @Test
+    public void returnsEmptyStringIfCannotProcessQuery() throws Exception {
+        assertThat(queryProcessor.process("test"), is(""));
+    }
 
-  @Test
-  public void knowsAboutShakespeare() throws Exception {
-    assertThat(queryProcessor.process("Shakespeare"), containsString("playwright"));
-  }
-  @Test
-  public void knowsAboutPlato() throws Exception{
-    assertThat(queryProcessor.process("Plato"), containsString("philosopher"));
+    @Test
+    public void knowsAboutShakespeare() throws Exception {
+        assertThat(queryProcessor.process("Shakespeare"), containsString("playwright"));
+    }
 
-  }
+    @Test
+    public void knowsAboutPlato() throws Exception {
+        assertThat(queryProcessor.process("Plato"), containsString("philosopher"));
 
+    }
+
+    @Test
+    public void whatIsYourName() {
+        assertThat(queryProcessor.process("What is your name?"), containsString("Prottush"));
+    }
 
 }

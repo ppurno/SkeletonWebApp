@@ -15,6 +15,9 @@ public class QueryProcessor {
                     " a philosophical school where he taught the philosophical doctrines that" +
                     " would later became known as Platonism. ";
         }
+        if (query.toLowerCase().contains("name")) {
+            return "Prottush";
+        }
 
         return "";
     }
