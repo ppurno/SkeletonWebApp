@@ -16,7 +16,7 @@ public class QueryProcessor {
                     " would later became known as Platonism. ";
         }
         if (query.toLowerCase().contains("name")) {
-            return "Prottush";
+            return "late-snow-2938";
         }
 
         return "";
