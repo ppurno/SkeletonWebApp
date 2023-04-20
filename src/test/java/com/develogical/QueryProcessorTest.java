@@ -46,4 +46,9 @@ public class QueryProcessorTest {
     public void multiplication(){
         assertThat(queryProcessor.process("What is 8 multiplied by 42?"), containsString("336"));
     }
+
+    @Test
+    public void addition(){
+        assertThat(queryProcessor.process("What is 28 plus 92?"), containsString("120"));
+    }
 }

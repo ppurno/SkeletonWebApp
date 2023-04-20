@@ -24,10 +24,7 @@ public class QueryProcessor {
         }
         if (query.toLowerCase().contains("largest")) {
 
-            String str = query.replaceAll("[^0-9]", " ");
-            str = str.replaceAll(" +", " ");
-            System.out.println(str);
-            String[] testArray = str.split(" ");
+            String[] testArray = getStrings(query);
             System.out.println(Arrays.toString(testArray));
 
             int max = Integer.MIN_VALUE, maxIndex = 0;
@@ -47,17 +44,28 @@ public class QueryProcessor {
         }
 
         if (query.toLowerCase().contains("multiplied")) {
-            String str = query.replaceAll("[^0-9]", " ");
-            str = str.replaceAll(" +", " ");
-            System.out.println(str);
-            String[] testArray = str.split(" ");
+            String[] testArray = getStrings(query);
             System.out.println(Arrays.toString(testArray));
             int result= (Integer.parseInt(testArray[1]))*(Integer.parseInt(testArray[2])) ;
+            return String.valueOf(result);
+        }
+        if (query.toLowerCase().contains("plus")) {
+            String[] testArray = getStrings(query);
+            System.out.println(Arrays.toString(testArray));
+            int result= (Integer.parseInt(testArray[1]))+(Integer.parseInt(testArray[2])) ;
             return String.valueOf(result);
         }
 
 
         return "";
 
+    }
+
+    private static String[] getStrings(String query) {
+        String str = query.replaceAll("[^0-9]", " ");
+        str = str.replaceAll(" +", " ");
+        System.out.println(str);
+        String[] testArray = str.split(" ");
+        return testArray;
     }
 }
