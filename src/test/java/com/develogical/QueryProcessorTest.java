@@ -28,7 +28,7 @@ public class QueryProcessorTest {
 
     @Test
     public void whatIsYourName() {
-        assertThat(queryProcessor.process("What is your name?"), containsString("Prottush"));
+        assertThat(queryProcessor.process("What is your name?"), containsString("late-snow-2938"));
     }
 
 }
