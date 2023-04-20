@@ -22,7 +22,7 @@ public class QueryProcessor {
             return "late-snow-2938";
         }
         if (query.toLowerCase().contains("largest")) {
-            int result;
+
             String str = query.replaceAll("[^0-9]", " ");
             str = str.replaceAll(" +", " ");
             System.out.println(str);
@@ -33,7 +33,7 @@ public class QueryProcessor {
 
             for (int i = 0; i < testArray.length; i++) {
                 if(testArray[i]==""){
-                    continue;
+                    i++;
                 }
                 if (Integer.parseInt(testArray[i]) > max) {
                     max = Integer.parseInt(testArray[i]);
