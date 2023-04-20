@@ -1,6 +1,7 @@
 package com.develogical;
 
 import java.util.Arrays;
+import java.util.Objects;
 
 public class QueryProcessor {
 
@@ -32,7 +33,7 @@ public class QueryProcessor {
             int max = Integer.MIN_VALUE, maxIndex = 0;
 
             for (int i = 0; i < testArray.length; i++) {
-                if(testArray[i]==""){
+                if(Objects.equals(testArray[i], "")){
                     i++;
                 }
                 if (Integer.parseInt(testArray[i]) > max) {
